@@ -1,13 +1,16 @@
 - A laravel application with docker.
 
-Services:
+##Services:
  -  Nginx
  -  Php-fpm
  -  Mysql
  -  Redis
 
-Start:
+##Start:
 `docker-compose up -d`
 
-Install dependencies:
+##Install dependencies:
 `docker-compose exec app composer install`
+
+##Docker Hub PHP-FPM Image with Laravel and Dependencies
+https://cloud.docker.com/u/thiagogmc/repository/docker/thiagogmc/php-fpm-laravel
