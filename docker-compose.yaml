@@ -20,9 +20,13 @@ services:
 
   nginx:
     build: .docker/nginx
+    entrypoint: dockerize -template ./.docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf -wait tcp://app:9000 -timeout 40s nginx -g "daemon off";
     container_name: nginx
     restart: always
     tty: true
+    environment:
+      - PHPFPM_HOST=app
+      - PHPFPM_PORT=9000
     ports:
       - "8000:80"
     volumes:
